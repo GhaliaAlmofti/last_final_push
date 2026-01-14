@@ -1,0 +1,380 @@
+name: General
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/v1/auth/login
+    metadata:
+      custom: []
+      groupName: General
+      groupDescription: null
+      subgroup: null
+      subgroupDescription: null
+      title: null
+      description: null
+      authenticated: false
+      deprecated: false
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/v1/auth/attendee/register
+    metadata:
+      custom: []
+      groupName: General
+      groupDescription: null
+      subgroup: null
+      subgroupDescription: null
+      title: null
+      description: null
+      authenticated: false
+      deprecated: false
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/v1/auth/owner/register
+    metadata:
+      custom: []
+      groupName: General
+      groupDescription: null
+      subgroup: null
+      subgroupDescription: null
+      title: null
+      description: null
+      authenticated: false
+      deprecated: false
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/v1/owner/login
+    metadata:
+      custom: []
+      groupName: General
+      groupDescription: null
+      subgroup: null
+      subgroupDescription: null
+      title: null
+      description: null
+      authenticated: false
+      deprecated: false
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/v1/owner/refresh
+    metadata:
+      custom: []
+      groupName: General
+      groupDescription: null
+      subgroup: null
+      subgroupDescription: null
+      title: null
+      description: null
+      authenticated: false
+      deprecated: false
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/owner/me
+    metadata:
+      custom: []
+      groupName: General
+      groupDescription: null
+      subgroup: null
+      subgroupDescription: null
+      title: null
+      description: null
+      authenticated: false
+      deprecated: false
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/v1/owner/me
+    metadata:
+      custom: []
+      groupName: General
+      groupDescription: null
+      subgroup: null
+      subgroupDescription: null
+      title: null
+      description: null
+      authenticated: false
+      deprecated: false
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/v1/owner/logout
+    metadata:
+      custom: []
+      groupName: General
+      groupDescription: null
+      subgroup: null
+      subgroupDescription: null
+      title: null
+      description: null
+      authenticated: false
+      deprecated: false
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/owner/events
+    metadata:
+      custom: []
+      groupName: General
+      groupDescription: null
+      subgroup: null
+      subgroupDescription: null
+      title: null
+      description: null
+      authenticated: false
+      deprecated: false
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/v1/owner/events
+    metadata:
+      custom: []
+      groupName: General
+      groupDescription: null
+      subgroup: null
+      subgroupDescription: null
+      title: null
+      description: null
+      authenticated: false
+      deprecated: false
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/v1/owner/events/{id}'
+    metadata:
+      custom: []
+      groupName: General
+      groupDescription: null
+      subgroup: null
+      subgroupDescription: null
+      title: null
+      description: null
+      authenticated: false
+      deprecated: false
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: 'api/v1/owner/events/{id}'
+    metadata:
+      custom: []
+      groupName: General
+      groupDescription: null
+      subgroup: null
+      subgroupDescription: null
+      title: null
+      description: null
+      authenticated: false
+      deprecated: false
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/owner/events/{id}'
+    metadata:
+      custom: []
+      groupName: General
+      groupDescription: null
+      subgroup: null
+      subgroupDescription: null
+      title: null
+      description: null
+      authenticated: false
+      deprecated: false
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

@@ -1,0 +1,547 @@
+{
+    "info": {
+        "name": "Faliyati API API Documentation",
+        "_postman_id": "7ddcf58c-bdf8-416b-bab5-5b27b3479b77",
+        "description": "Faliyati API for event management, owners, attendees",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "version": "1.0.0"
+    },
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "https://faliyati-api-production.up.railway.app"
+        },
+        {
+            "key": "access_token",
+            "value": ""
+        },
+        {
+            "key": "eventId",
+            "value": ""
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "item": [
+        {
+            "name": "Authentication",
+            "item": [
+                {
+                    "name": "Owner Login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"username\": \"owner1\",\n  \"password\": \"secret123\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/v1/auth/login",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "auth",
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Attendee Register",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Doe\",\n  \"username\": \"attendee1\",\n  \"password\": \"secret123\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/v1/auth/attendee/register",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "auth",
+                                "attendee",
+                                "register"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Owner Register",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "first_name",
+                                    "value": "Alice",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "last_name",
+                                    "value": "Smith",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "username",
+                                    "value": "owner1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "secret123",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "bio",
+                                    "value": "Event organizer",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "country",
+                                    "value": "Egypt",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "photo",
+                                    "type": "file",
+                                    "src": ""
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/v1/auth/owner/register",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "auth",
+                                "owner",
+                                "register"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Owner Endpoints",
+            "item": [
+                {
+                    "name": "Login (owner namespace)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"username\": \"owner1\",\n  \"password\": \"secret123\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/v1/owner/login",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "owner",
+                                "login"
+                            ]
+                        }
+                    },
+                    "auth": {
+                        "type": "noauth"
+                    }
+                },
+                {
+                    "name": "Refresh Token",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/v1/owner/refresh",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "owner",
+                                "refresh"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Profile",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/v1/owner/me",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "owner",
+                                "me"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Profile",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "username",
+                                    "value": "newowner1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "first_name",
+                                    "value": "New Alice",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "last_name",
+                                    "value": "New Smith",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "bio",
+                                    "value": "Tech meetup organizer",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "country",
+                                    "value": "UAE",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "photo",
+                                    "type": "file",
+                                    "src": ""
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/v1/owner/me",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "owner",
+                                "me"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Logout",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/v1/owner/logout",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "owner",
+                                "logout"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Owner Events",
+            "item": [
+                {
+                    "name": "List Events",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/v1/owner/events",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "owner",
+                                "events"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Event",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "title",
+                                    "value": "Summer Gala",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "location",
+                                    "value": "venue",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "location_description",
+                                    "value": "Main hall, 2nd floor",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "description",
+                                    "value": "An evening of music and food.",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "start_date",
+                                    "value": "2026-02-01 19:00:00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "end_date",
+                                    "value": "2026-02-01 22:00:00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "max_attendees",
+                                    "value": "500",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "poster",
+                                    "type": "file",
+                                    "src": ""
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/v1/owner/events",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "owner",
+                                "events"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Event",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/v1/owner/events/{{eventId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "owner",
+                                "events",
+                                "{{eventId}}"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Event",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "title",
+                                    "value": "Updated Gala",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "description",
+                                    "value": "Updated description.",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "start_date",
+                                    "value": "2026-02-02 19:00:00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "end_date",
+                                    "value": "2026-02-02 22:00:00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "poster",
+                                    "type": "file",
+                                    "src": ""
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/v1/owner/events/{{eventId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "owner",
+                                "events",
+                                "{{eventId}}"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Event",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/v1/owner/events/{{eventId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "owner",
+                                "events",
+                                "{{eventId}}"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

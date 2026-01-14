@@ -1,0 +1,148 @@
+openapi: 3.0.3
+info:
+  title: 'Faaleeyati-API API'
+  description: 'Faliyati API for event management, owners, attendees '
+  version: 1.0.0
+servers:
+  -
+    url: 'https://faliyati-api-production.up.railway.app'
+tags:
+  -
+    name: General
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'Get your token from <code>POST /api/v1/owner/login</code>'
+security:
+  -
+    default: []
+paths:
+  /api/v1/auth/login:
+    post:
+      summary: null
+      operationId: postApiV1AuthLogin
+      description: null
+      parameters: []
+      responses: {  }
+      tags:
+        - General
+      security: []
+  /api/v1/auth/attendee/register:
+    post:
+      summary: null
+      operationId: postApiV1AuthAttendeeRegister
+      description: null
+      parameters: []
+      responses: {  }
+      tags:
+        - General
+      security: []
+  /api/v1/auth/owner/register:
+    post:
+      summary: null
+      operationId: postApiV1AuthOwnerRegister
+      description: null
+      parameters: []
+      responses: {  }
+      tags:
+        - General
+      security: []
+  /api/v1/owner/login:
+    post:
+      summary: null
+      operationId: postApiV1OwnerLogin
+      description: null
+      parameters: []
+      responses: {  }
+      tags:
+        - General
+      security: []
+  /api/v1/owner/refresh:
+    post:
+      summary: null
+      operationId: postApiV1OwnerRefresh
+      description: null
+      parameters: []
+      responses: {  }
+      tags:
+        - General
+      security: []
+  /api/v1/owner/me:
+    get:
+      summary: null
+      operationId: getApiV1OwnerMe
+      description: null
+      parameters: []
+      responses: {  }
+      tags:
+        - General
+      security: []
+    post:
+      summary: null
+      operationId: postApiV1OwnerMe
+      description: null
+      parameters: []
+      responses: {  }
+      tags:
+        - General
+      security: []
+  /api/v1/owner/logout:
+    post:
+      summary: null
+      operationId: postApiV1OwnerLogout
+      description: null
+      parameters: []
+      responses: {  }
+      tags:
+        - General
+      security: []
+  /api/v1/owner/events:
+    get:
+      summary: null
+      operationId: getApiV1OwnerEvents
+      description: null
+      parameters: []
+      responses: {  }
+      tags:
+        - General
+      security: []
+    post:
+      summary: null
+      operationId: postApiV1OwnerEvents
+      description: null
+      parameters: []
+      responses: {  }
+      tags:
+        - General
+      security: []
+  '/api/v1/owner/events/{id}':
+    get:
+      summary: null
+      operationId: getApiV1OwnerEventsId
+      description: null
+      parameters: []
+      responses: {  }
+      tags:
+        - General
+      security: []
+    put:
+      summary: null
+      operationId: putApiV1OwnerEventsId
+      description: null
+      parameters: []
+      responses: {  }
+      tags:
+        - General
+      security: []
+    delete:
+      summary: null
+      operationId: deleteApiV1OwnerEventsId
+      description: null
+      parameters: []
+      responses: {  }
+      tags:
+        - General
+      security: []

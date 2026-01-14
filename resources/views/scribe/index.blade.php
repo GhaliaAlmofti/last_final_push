@@ -1,0 +1,1633 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Faaleeyati-API API Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset("/vendor/scribe/css/theme-default.style.css") }}" media="screen">
+    <link rel="stylesheet" href="{{ asset("/vendor/scribe/css/theme-default.print.css") }}" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+                    body .content .php-example code { display: none; }
+            </style>
+
+    <script>
+        var tryItOutBaseUrl = "https://faliyati-api-production.up.railway.app/api/v1";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="{{ asset("/vendor/scribe/js/tryitout-5.6.0.js") }}"></script>
+
+    <script src="{{ asset("/vendor/scribe/js/theme-default-5.6.0.js") }}"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;,&quot;php&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="{{ asset("/vendor/scribe/images/navbar.png") }}" alt="navbar-image"/>
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                            <button type="button" class="lang-button" data-language-name="php">php</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                    <ul id="tocify-header-introduction" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="introduction">
+                    <a href="#introduction">Introduction</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-authenticating-requests" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authenticating-requests">
+                    <a href="#authenticating-requests">Authenticating requests</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-general" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="general">
+                    <a href="#general">General</a>
+                </li>
+                                    <ul id="tocify-subheader-general" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="general-POSTapi-v1-auth-login">
+                                <a href="#general-POSTapi-v1-auth-login">POST api/v1/auth/login</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-POSTapi-v1-auth-attendee-register">
+                                <a href="#general-POSTapi-v1-auth-attendee-register">POST api/v1/auth/attendee/register</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-POSTapi-v1-auth-owner-register">
+                                <a href="#general-POSTapi-v1-auth-owner-register">POST api/v1/auth/owner/register</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-GETapi-v1-admin-categories">
+                                <a href="#general-GETapi-v1-admin-categories">GET api/v1/admin/categories</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-POSTapi-v1-admin-categories">
+                                <a href="#general-POSTapi-v1-admin-categories">POST api/v1/admin/categories</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-GETapi-v1-admin-categories--slug-">
+                                <a href="#general-GETapi-v1-admin-categories--slug-">GET api/v1/admin/categories/{slug}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-PUTapi-v1-admin-categories--slug-">
+                                <a href="#general-PUTapi-v1-admin-categories--slug-">PUT api/v1/admin/categories/{slug}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-DELETEapi-v1-admin-categories--slug-">
+                                <a href="#general-DELETEapi-v1-admin-categories--slug-">DELETE api/v1/admin/categories/{slug}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-GETapi-v1-admin-books">
+                                <a href="#general-GETapi-v1-admin-books">GET api/v1/admin/books</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-POSTapi-v1-admin-books">
+                                <a href="#general-POSTapi-v1-admin-books">POST api/v1/admin/books</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-GETapi-v1-admin-books--slug-">
+                                <a href="#general-GETapi-v1-admin-books--slug-">GET api/v1/admin/books/{slug}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-PUTapi-v1-admin-books--slug-">
+                                <a href="#general-PUTapi-v1-admin-books--slug-">PUT api/v1/admin/books/{slug}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-DELETEapi-v1-admin-books--slug-">
+                                <a href="#general-DELETEapi-v1-admin-books--slug-">DELETE api/v1/admin/books/{slug}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-POSTapi-v1-owner-login">
+                                <a href="#general-POSTapi-v1-owner-login">POST api/v1/owner/login</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-POSTapi-v1-owner-refresh">
+                                <a href="#general-POSTapi-v1-owner-refresh">POST api/v1/owner/refresh</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-GETapi-v1-owner-me">
+                                <a href="#general-GETapi-v1-owner-me">GET api/v1/owner/me</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="general-POSTapi-v1-owner-logout">
+                                <a href="#general-POSTapi-v1-owner-logout">POST api/v1/owner/logout</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+            </div>
+
+    <ul class="toc-footer" id="toc-footer">
+                    <li style="padding-bottom: 5px;"><a href="{{ route("scribe.postman") }}">View Postman collection</a></li>
+                            <li style="padding-bottom: 5px;"><a href="{{ route("scribe.openapi") }}">View OpenAPI spec</a></li>
+                <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+    </ul>
+
+    <ul class="toc-footer" id="last-updated">
+        <li>Last updated: January 13, 2026</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>Faliyati API for event management, owners, attendees and books.</p>
+<aside>
+    <strong>Base URL</strong>: <code>https://faliyati-api-production.up.railway.app/api/v1</code>
+</aside>
+<pre><code>This documentation aims to provide all the information you need to work with **Faliyati API**.
+
+&lt;aside&gt;
+    As you scroll, you'll see code examples for working with the API in different programming languages.
+    &lt;br/&gt;
+    &lt;strong&gt;Authentication:&lt;/strong&gt; Use Bearer tokens from `/api/v1/owner/login` or `/api/v1/owner/register`
+&lt;/aside&gt;</code></pre>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_ACCESS_TOKEN}"</code></strong>.</p>
+<p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
+<p>Get your token from <code>POST /api/v1/owner/login</code></p>
+
+        <h1 id="general">General</h1>
+
+    
+
+                                <h2 id="general-POSTapi-v1-auth-login">POST api/v1/auth/login</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-auth-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/auth/login"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/auth/login"
+);
+
+fetch(url, {
+    method: "POST",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/auth/login';
+$response = $client-&gt;post($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-auth-login">
+</span>
+<span id="execution-results-POSTapi-v1-auth-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-auth-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-login"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-auth-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-auth-login">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-auth-login" data-method="POST"
+      data-path="api/v1/auth/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-auth-login"
+                    onclick="tryItOut('POSTapi-v1-auth-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-auth-login"
+                    onclick="cancelTryOut('POSTapi-v1-auth-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-auth-login"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/auth/login</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-POSTapi-v1-auth-attendee-register">POST api/v1/auth/attendee/register</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-auth-attendee-register">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/auth/attendee/register"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/auth/attendee/register"
+);
+
+fetch(url, {
+    method: "POST",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/auth/attendee/register';
+$response = $client-&gt;post($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-auth-attendee-register">
+</span>
+<span id="execution-results-POSTapi-v1-auth-attendee-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-auth-attendee-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-attendee-register"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-auth-attendee-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-auth-attendee-register">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-auth-attendee-register" data-method="POST"
+      data-path="api/v1/auth/attendee/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth-attendee-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-auth-attendee-register"
+                    onclick="tryItOut('POSTapi-v1-auth-attendee-register');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-auth-attendee-register"
+                    onclick="cancelTryOut('POSTapi-v1-auth-attendee-register');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-auth-attendee-register"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/auth/attendee/register</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-POSTapi-v1-auth-owner-register">POST api/v1/auth/owner/register</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-auth-owner-register">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/auth/owner/register"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/auth/owner/register"
+);
+
+fetch(url, {
+    method: "POST",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/auth/owner/register';
+$response = $client-&gt;post($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-auth-owner-register">
+</span>
+<span id="execution-results-POSTapi-v1-auth-owner-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-auth-owner-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-owner-register"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-auth-owner-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-auth-owner-register">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-auth-owner-register" data-method="POST"
+      data-path="api/v1/auth/owner/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth-owner-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-auth-owner-register"
+                    onclick="tryItOut('POSTapi-v1-auth-owner-register');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-auth-owner-register"
+                    onclick="cancelTryOut('POSTapi-v1-auth-owner-register');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-auth-owner-register"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/auth/owner/register</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-GETapi-v1-admin-categories">GET api/v1/admin/categories</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-admin-categories">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories';
+$response = $client-&gt;get($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-admin-categories">
+    </span>
+<span id="execution-results-GETapi-v1-admin-categories" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-admin-categories"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-categories"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-admin-categories" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-admin-categories">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-admin-categories" data-method="GET"
+      data-path="api/v1/admin/categories"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-categories', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-admin-categories"
+                    onclick="tryItOut('GETapi-v1-admin-categories');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-admin-categories"
+                    onclick="cancelTryOut('GETapi-v1-admin-categories');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-admin-categories"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/admin/categories</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-POSTapi-v1-admin-categories">POST api/v1/admin/categories</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-admin-categories">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories"
+);
+
+fetch(url, {
+    method: "POST",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories';
+$response = $client-&gt;post($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-admin-categories">
+</span>
+<span id="execution-results-POSTapi-v1-admin-categories" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-admin-categories"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-admin-categories"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-admin-categories" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-admin-categories">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-admin-categories" data-method="POST"
+      data-path="api/v1/admin/categories"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-admin-categories', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-admin-categories"
+                    onclick="tryItOut('POSTapi-v1-admin-categories');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-admin-categories"
+                    onclick="cancelTryOut('POSTapi-v1-admin-categories');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-admin-categories"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/admin/categories</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-GETapi-v1-admin-categories--slug-">GET api/v1/admin/categories/{slug}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-admin-categories--slug-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories/{slug}"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories/{slug}"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories/{slug}';
+$response = $client-&gt;get($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-admin-categories--slug-">
+    </span>
+<span id="execution-results-GETapi-v1-admin-categories--slug-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-admin-categories--slug-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-categories--slug-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-admin-categories--slug-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-admin-categories--slug-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-admin-categories--slug-" data-method="GET"
+      data-path="api/v1/admin/categories/{slug}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-categories--slug-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-admin-categories--slug-"
+                    onclick="tryItOut('GETapi-v1-admin-categories--slug-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-admin-categories--slug-"
+                    onclick="cancelTryOut('GETapi-v1-admin-categories--slug-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-admin-categories--slug-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/admin/categories/{slug}</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-PUTapi-v1-admin-categories--slug-">PUT api/v1/admin/categories/{slug}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-admin-categories--slug-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories/{slug}"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories/{slug}"
+);
+
+fetch(url, {
+    method: "PUT",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories/{slug}';
+$response = $client-&gt;put($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-admin-categories--slug-">
+</span>
+<span id="execution-results-PUTapi-v1-admin-categories--slug-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-admin-categories--slug-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-admin-categories--slug-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-admin-categories--slug-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-admin-categories--slug-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-v1-admin-categories--slug-" data-method="PUT"
+      data-path="api/v1/admin/categories/{slug}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-admin-categories--slug-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-admin-categories--slug-"
+                    onclick="tryItOut('PUTapi-v1-admin-categories--slug-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-admin-categories--slug-"
+                    onclick="cancelTryOut('PUTapi-v1-admin-categories--slug-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-admin-categories--slug-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/admin/categories/{slug}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/admin/categories/{slug}</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-DELETEapi-v1-admin-categories--slug-">DELETE api/v1/admin/categories/{slug}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-admin-categories--slug-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories/{slug}"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories/{slug}"
+);
+
+fetch(url, {
+    method: "DELETE",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/categories/{slug}';
+$response = $client-&gt;delete($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-admin-categories--slug-">
+</span>
+<span id="execution-results-DELETEapi-v1-admin-categories--slug-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-admin-categories--slug-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-admin-categories--slug-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-admin-categories--slug-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-admin-categories--slug-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-v1-admin-categories--slug-" data-method="DELETE"
+      data-path="api/v1/admin/categories/{slug}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-admin-categories--slug-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-admin-categories--slug-"
+                    onclick="tryItOut('DELETEapi-v1-admin-categories--slug-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-admin-categories--slug-"
+                    onclick="cancelTryOut('DELETEapi-v1-admin-categories--slug-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-admin-categories--slug-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/admin/categories/{slug}</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-GETapi-v1-admin-books">GET api/v1/admin/books</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-admin-books">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books';
+$response = $client-&gt;get($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-admin-books">
+    </span>
+<span id="execution-results-GETapi-v1-admin-books" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-admin-books"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-books"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-admin-books" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-admin-books">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-admin-books" data-method="GET"
+      data-path="api/v1/admin/books"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-books', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-admin-books"
+                    onclick="tryItOut('GETapi-v1-admin-books');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-admin-books"
+                    onclick="cancelTryOut('GETapi-v1-admin-books');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-admin-books"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/admin/books</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-POSTapi-v1-admin-books">POST api/v1/admin/books</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-admin-books">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books"
+);
+
+fetch(url, {
+    method: "POST",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books';
+$response = $client-&gt;post($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-admin-books">
+</span>
+<span id="execution-results-POSTapi-v1-admin-books" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-admin-books"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-admin-books"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-admin-books" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-admin-books">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-admin-books" data-method="POST"
+      data-path="api/v1/admin/books"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-admin-books', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-admin-books"
+                    onclick="tryItOut('POSTapi-v1-admin-books');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-admin-books"
+                    onclick="cancelTryOut('POSTapi-v1-admin-books');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-admin-books"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/admin/books</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-GETapi-v1-admin-books--slug-">GET api/v1/admin/books/{slug}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-admin-books--slug-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books/{slug}"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books/{slug}"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books/{slug}';
+$response = $client-&gt;get($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-admin-books--slug-">
+    </span>
+<span id="execution-results-GETapi-v1-admin-books--slug-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-admin-books--slug-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-books--slug-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-admin-books--slug-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-admin-books--slug-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-admin-books--slug-" data-method="GET"
+      data-path="api/v1/admin/books/{slug}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-books--slug-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-admin-books--slug-"
+                    onclick="tryItOut('GETapi-v1-admin-books--slug-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-admin-books--slug-"
+                    onclick="cancelTryOut('GETapi-v1-admin-books--slug-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-admin-books--slug-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/admin/books/{slug}</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-PUTapi-v1-admin-books--slug-">PUT api/v1/admin/books/{slug}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-admin-books--slug-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books/{slug}"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books/{slug}"
+);
+
+fetch(url, {
+    method: "PUT",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books/{slug}';
+$response = $client-&gt;put($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-admin-books--slug-">
+</span>
+<span id="execution-results-PUTapi-v1-admin-books--slug-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-admin-books--slug-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-admin-books--slug-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-admin-books--slug-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-admin-books--slug-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-v1-admin-books--slug-" data-method="PUT"
+      data-path="api/v1/admin/books/{slug}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-admin-books--slug-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-admin-books--slug-"
+                    onclick="tryItOut('PUTapi-v1-admin-books--slug-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-admin-books--slug-"
+                    onclick="cancelTryOut('PUTapi-v1-admin-books--slug-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-admin-books--slug-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/admin/books/{slug}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/admin/books/{slug}</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-DELETEapi-v1-admin-books--slug-">DELETE api/v1/admin/books/{slug}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-admin-books--slug-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books/{slug}"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books/{slug}"
+);
+
+fetch(url, {
+    method: "DELETE",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/admin/books/{slug}';
+$response = $client-&gt;delete($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-admin-books--slug-">
+</span>
+<span id="execution-results-DELETEapi-v1-admin-books--slug-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-admin-books--slug-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-admin-books--slug-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-admin-books--slug-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-admin-books--slug-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-v1-admin-books--slug-" data-method="DELETE"
+      data-path="api/v1/admin/books/{slug}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-admin-books--slug-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-admin-books--slug-"
+                    onclick="tryItOut('DELETEapi-v1-admin-books--slug-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-admin-books--slug-"
+                    onclick="cancelTryOut('DELETEapi-v1-admin-books--slug-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-admin-books--slug-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/admin/books/{slug}</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-POSTapi-v1-owner-login">POST api/v1/owner/login</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-owner-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/owner/login"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/owner/login"
+);
+
+fetch(url, {
+    method: "POST",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/owner/login';
+$response = $client-&gt;post($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-owner-login">
+</span>
+<span id="execution-results-POSTapi-v1-owner-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-owner-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-owner-login"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-owner-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-owner-login">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-owner-login" data-method="POST"
+      data-path="api/v1/owner/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-owner-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-owner-login"
+                    onclick="tryItOut('POSTapi-v1-owner-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-owner-login"
+                    onclick="cancelTryOut('POSTapi-v1-owner-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-owner-login"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/owner/login</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-POSTapi-v1-owner-refresh">POST api/v1/owner/refresh</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-owner-refresh">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/owner/refresh"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/owner/refresh"
+);
+
+fetch(url, {
+    method: "POST",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/owner/refresh';
+$response = $client-&gt;post($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-owner-refresh">
+</span>
+<span id="execution-results-POSTapi-v1-owner-refresh" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-owner-refresh"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-owner-refresh"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-owner-refresh" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-owner-refresh">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-owner-refresh" data-method="POST"
+      data-path="api/v1/owner/refresh"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-owner-refresh', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-owner-refresh"
+                    onclick="tryItOut('POSTapi-v1-owner-refresh');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-owner-refresh"
+                    onclick="cancelTryOut('POSTapi-v1-owner-refresh');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-owner-refresh"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/owner/refresh</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-GETapi-v1-owner-me">GET api/v1/owner/me</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-owner-me">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://faliyati-api-production.up.railway.app/api/v1/api/v1/owner/me"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/owner/me"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/owner/me';
+$response = $client-&gt;get($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-owner-me">
+    </span>
+<span id="execution-results-GETapi-v1-owner-me" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-owner-me"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-owner-me"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-owner-me" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-owner-me">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-owner-me" data-method="GET"
+      data-path="api/v1/owner/me"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-owner-me', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-owner-me"
+                    onclick="tryItOut('GETapi-v1-owner-me');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-owner-me"
+                    onclick="cancelTryOut('GETapi-v1-owner-me');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-owner-me"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/owner/me</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="general-POSTapi-v1-owner-logout">POST api/v1/owner/logout</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-owner-logout">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/owner/logout"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://faliyati-api-production.up.railway.app/api/v1/api/v1/owner/logout"
+);
+
+fetch(url, {
+    method: "POST",
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://faliyati-api-production.up.railway.app/api/v1/api/v1/owner/logout';
+$response = $client-&gt;post($url);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-owner-logout">
+</span>
+<span id="execution-results-POSTapi-v1-owner-logout" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-owner-logout"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-owner-logout"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-owner-logout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-owner-logout">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-owner-logout" data-method="POST"
+      data-path="api/v1/owner/logout"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-owner-logout', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-owner-logout"
+                    onclick="tryItOut('POSTapi-v1-owner-logout');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-owner-logout"
+                    onclick="cancelTryOut('POSTapi-v1-owner-logout');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-owner-logout"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/owner/logout</code></b>
+        </p>
+                    </form>
+
+            
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                                        <button type="button" class="lang-button" data-language-name="php">php</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>
